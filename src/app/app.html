@@ -1,1 +1,35 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Kalasin Number
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="kalasinNumber-list1">
+      <ion-item color="positive" menuClose="" on-click="goToHome()" id="kalasinNumber-list-item1">
+        <ion-icon name="ionic" item-left></ion-icon>
+        ค้นหา
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToAmper()" id="kalasinNumber-list-item2">
+        <ion-icon name="compass" item-left></ion-icon>
+        อำเภอ
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToCategory()" id="kalasinNumber-list-item3">
+        <ion-icon name="logo-buffer" item-left></ion-icon>
+        หมวดหมู่
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToEmergency()" id="kalasinNumber-list-item4">
+        <ion-icon name="medkit" item-left></ion-icon>
+        เบอร์โทรศัพท์ฉุกเฉิน
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToAbout()" id="kalasinNumber-list-item5">
+        <ion-icon name="information-circle" item-left></ion-icon>
+        About
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

@@ -1,16 +1,28 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AmperPage } from '../pages/amper/amper';
+import { CategoryPage } from '../pages/category/category';
+import { EmergencyPage } from '../pages/emergency/emergency';
+import { ResultPage } from '../pages/result/result';
+import { AboutPage } from '../pages/about/about';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { SQLite } from '@ionic-native/sqlite'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AmperPage,
+    CategoryPage,
+    EmergencyPage,
+    ResultPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +31,17 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AmperPage,
+    CategoryPage,
+    EmergencyPage,
+    ResultPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

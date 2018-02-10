@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      หน้าหลัก
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding id="page1">
+  <h3 id="home-heading1" style="color:#0F4984;">
+    รวมเบอร์โทรศัพท์
+  </h3>
+  <h4 id="home-heading2" style="color:#000000;">
+    ส่วนราชการจังหวัดกาฬสินธุ์
+  </h4>
+  <img src="assets/img/wBoitMfFR0GZMpRwEAFE_145px-Seal_Kalasin.png" style="display:block;width:auto;height:auto;margin-left:auto;margin-right:auto;" />
+  <form id="home-form1">
+    <ion-searchbar placeholder="ค้นหา" name="" id="home-search1"></ion-searchbar>
+  </form>
+  <ion-list id="home-list2">
+    <ion-item color="none" on-click="goToAmper()" id="home-list-item6">
+      <ion-icon name="compass" item-left></ion-icon>
+      ค้นหาจากอำเภอ
+    </ion-item>
+    <ion-item color="none" on-click="goToCategory()" id="home-list-item7">
+      <ion-icon name="logo-buffer" item-left></ion-icon>
+      ค้นหาจากหมวดหมู่
+    </ion-item>
+    <ion-item color="none" on-click="goToEmergency()" id="home-list-item8">
+      <ion-icon name="medkit" item-left></ion-icon>
+      เบอร์โทรศัพท์ฉุกเฉิน
+    </ion-item>
+  </ion-list>
 </ion-content>
