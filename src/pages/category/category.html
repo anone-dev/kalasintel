@@ -10,11 +10,18 @@
 </ion-header>
 <ion-content padding id="page3">
   <form id="category-form3">
-    <ion-searchbar placeholder="ค้นหา" name="" id="category-search3"></ion-searchbar>
+    <ion-searchbar placeholder="หมวดหมู่" (ionInput)="getItems($event)" name="" id="category-search3"></ion-searchbar>
     <div class="spacer" style="width:300px;height:15px;" id="category-spacer2"></div>
-    <ion-item color="none" id="category-list-item10">
+    <!-- <ion-item color="none" id="category-list-item10">
       <ion-icon name="filing" item-left></ion-icon>
       ส่วนราชการส่วนภูมิภาค
-    </ion-item>
+    </ion-item> -->
+
+    <ion-list >
+      <ion-item *ngFor="let category of items" (click)="itemSelected(category)" >
+        <ion-icon name="filing" item-left></ion-icon>
+        {{ category }}
+      </ion-item>
+    </ion-list>
   </form>
 </ion-content>

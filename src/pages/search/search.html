@@ -1,0 +1,40 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        ค้นหา
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding >
+    <form >
+      <ion-searchbar #searchBar placeholder="ชื่อ, ตำแหน่ง, หน่วยงาน" (ionInput)="getItems($event)" name="" ></ion-searchbar>
+      <div class="spacer" style="height:15px;" ></div>
+      <!-- <ion-item color="none" id="amper-list-item9">
+        <ion-icon name="compass" item-left></ion-icon>
+        อำเภอ
+      </ion-item> -->
+  
+      <ion-list >
+          <ion-item *ngFor="let contact of contacts" (click)="call(contact)" color="positive" >
+            <!-- <ion-icon name="person" item-left></ion-icon> -->
+            <h3 style="text-align: left; width:59%; display: inline-block;"><b>{{ contact.fullname }}</b></h3>
+            <h3 style="text-align: right; width:40%;  display: inline-block;">{{ contact.phone }}</h3>
+            <p>{{ contact.position }}<br>{{ contact.officename }}</p>
+            <ion-note item-right>
+              <!-- โทรออก -->
+            </ion-note>
+            <ion-icon name="call" item-right></ion-icon>
+          </ion-item>
+      </ion-list>
+
+    </form>
+  </ion-content>

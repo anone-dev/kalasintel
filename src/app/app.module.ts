@@ -1,3 +1,4 @@
+import { ContentDrawer } from './../components/content-drawer/content-drawer';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -8,7 +9,7 @@ import { CategoryPage } from '../pages/category/category';
 import { EmergencyPage } from '../pages/emergency/emergency';
 import { ResultPage } from '../pages/result/result';
 import { AboutPage } from '../pages/about/about';
-
+import { SearchPage } from './../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,9 @@ import { SQLite } from '@ionic-native/sqlite'
     CategoryPage,
     EmergencyPage,
     ResultPage,
-    AboutPage
+    AboutPage,
+    SearchPage,
+    ContentDrawer
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { SQLite } from '@ionic-native/sqlite'
     CategoryPage,
     EmergencyPage,
     ResultPage,
-    AboutPage
+    AboutPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

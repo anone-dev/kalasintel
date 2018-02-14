@@ -8,7 +8,7 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page1">
+<!-- <ion-content padding id="page1">
   <h3 id="home-heading1" style="color:#0F4984;">
     รวมเบอร์โทรศัพท์
   </h3>
@@ -17,7 +17,7 @@
   </h4>
   <img src="assets/img/wBoitMfFR0GZMpRwEAFE_145px-Seal_Kalasin.png" style="display:block;width:auto;height:auto;margin-left:auto;margin-right:auto;" />
   <form id="home-form1">
-    <ion-searchbar placeholder="ค้นหา" name="" id="home-search1"></ion-searchbar>
+    <ion-searchbar placeholder="ค้นหา" (ionInput)="goSearch($event)" name="" id="home-search1"></ion-searchbar>
   </form>
   <ion-list id="home-list2">
     <ion-item color="none" on-click="goToAmper()" id="home-list-item6">
@@ -33,4 +33,53 @@
       เบอร์โทรศัพท์ฉุกเฉิน
     </ion-item>
   </ion-list>
+</ion-content> -->
+
+<ion-content padding id="page1">
+    <!-- <form id="home-form1">
+        <ion-searchbar placeholder="ค้นหา" on-click="goSearch()" name="" id="home-search1"></ion-searchbar>
+      </form> -->
+      <!-- <img src="assets/img/wBoitMfFR0GZMpRwEAFE_145px-Seal_Kalasin.png" style="display:block;width:auto;height:auto;margin-left:auto;margin-right:auto;" /> -->
+      <!-- <h3 id="home-heading1" style="color:#0F4984; text-align: left;">หมายเลขโทรศัพท์</h3>
+      <h4 id="home-heading2" style="color:#000000; text-align: left;">ส่วนราชการจังหวัดกาฬสินธุ์</h4>
+      <img src="assets/img/wBoitMfFR0GZMpRwEAFE_145px-Seal_Kalasin.png" style="display:block;width:auto;height:auto;margin-left:auto;margin-right:auto;" /> -->
+      
+      <!-- <div class="spacer" style="height:10px;" id="amper-spacer1"></div> -->
+      <ion-list id="home-list2">
+        <ion-item color="none" on-click="goSearch()" id="home-list-item5">
+          <ion-icon name="people" item-left></ion-icon>
+          ค้นหาจากชื่อ, ตำแหน่ง, หน่วยงาน
+        </ion-item>
+        <ion-item color="none" on-click="goToAmper()" id="home-list-item6">
+          <ion-icon name="compass" item-left></ion-icon>
+          ค้นหาจากอำเภอ
+        </ion-item>
+        <ion-item color="none" on-click="goToCategory()" id="home-list-item7">
+          <ion-icon name="logo-buffer" item-left></ion-icon>
+          ค้นหาจากหมวดหมู่
+        </ion-item>
+        <ion-item color="none" on-click="goToEmergency()" id="home-list-item8">
+          <ion-icon name="medkit" item-left></ion-icon>
+          หมายเลขโทรศัพท์ฉุกเฉิน
+        </ion-item>
+      </ion-list>
+  <img src="assets/img/wBoitMfFR0GZMpRwEAFE_145px-Seal_Kalasin.png" style="display:block;width:auto;height:auto;margin-left:auto;margin-right:auto;" />
+  <h3 id="home-heading1" style="color:#0F4984; text-align: center;">หมายเลขโทรศัพท์</h3>
+  <h4 id="home-heading2" style="color:#000000; text-align: center;">ส่วนราชการจังหวัดกาฬสินธุ์</h4>
 </ion-content>
+<content-drawer [options]="drawerOptions" >
+    <div id="container">
+    <ion-list >
+        <ion-item *ngFor="let contact of contacts" (click)="call(contact)" color="positive" >
+          <!-- <ion-icon name="person" item-left></ion-icon> -->
+          <h3 style="text-align: left; width:59%; display: inline-block;"><b>{{ contact.fullname }}</b></h3>
+          <h3 style="text-align: right; width:40%;  display: inline-block;">{{ contact.phone }}</h3>
+          <p>{{ contact.position }}<br>{{ contact.officename }}</p>
+          <ion-note item-right>
+            <!-- โทรออก -->
+          </ion-note>
+          <ion-icon name="call" item-right></ion-icon>
+        </ion-item>
+    </ion-list>
+  </div>
+</content-drawer>

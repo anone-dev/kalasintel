@@ -1,0 +1,15 @@
+<ion-header> 
+    <ion-navbar class="custom"> 
+     <ion-title *ngIf="!title">
+        {{options.showTitle}}
+     </ion-title>
+     <ion-title *ngIf="title">
+        {{options.hideTitle}}
+     </ion-title>
+    </ion-navbar>
+</ion-header> 
+<!-- {{options.showTitle}}
+{{options.hideTitle}} -->
+<ion-content>
+     <ng-content></ng-content>
+</ion-content>

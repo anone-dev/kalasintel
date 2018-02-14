@@ -10,11 +10,18 @@
 </ion-header>
 <ion-content padding id="page2">
   <form id="amper-form2">
-    <ion-searchbar placeholder="ค้นหา" name="" id="amper-search2"></ion-searchbar>
+    <ion-searchbar placeholder="อำเภอ" (ionInput)="getItems($event)" name="" id="amper-search2"></ion-searchbar>
     <div class="spacer" style="height:15px;" id="amper-spacer1"></div>
-    <ion-item color="none" id="amper-list-item9">
+    <!-- <ion-item color="none" id="amper-list-item9">
       <ion-icon name="compass" item-left></ion-icon>
       อำเภอ
-    </ion-item>
+    </ion-item> -->
+
+    <ion-list >
+      <ion-item *ngFor="let amper of items"  (click)="itemSelected(amper)">
+        <ion-icon name="compass" item-left></ion-icon>
+        {{ amper }}
+      </ion-item>
+    </ion-list>
   </form>
 </ion-content>
