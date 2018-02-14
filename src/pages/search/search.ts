@@ -29,10 +29,11 @@ export class SearchPage {
 
   ionViewDidLoad() {
     // console.log('ionViewDidLoad SearchPage');
-    this.showData();
+    // this.showData();
   }
 
   ionViewWillEnter(){
+    this.showData();
     // this.searchInput.setFocus();
   }
 
@@ -47,7 +48,6 @@ export class SearchPage {
                         officename: rows.item(i).officename })
       })
     });
-
     // let toast = this.toastCtrl.create({
     //   message: 'ค่า amper: '+this.amper + ': ' + this.category,
     //   duration: 3000
@@ -67,7 +67,6 @@ export class SearchPage {
       this.showData();
     }
   }
-  
 
   private call(contact){
     // alert(contact.name+" "+contact.phone);

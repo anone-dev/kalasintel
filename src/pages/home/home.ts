@@ -13,7 +13,9 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 export class HomePage {
   public contacts: Array<object>;
   private options = { name: "KLNumber.db", location: 'default', createFromLocation: 1 };
+  private optionslo = { name: "KLNumber.db", location: 'default'};
   private queryNames = "SELECT * FROM klnumber ";
+  // private query = "SELECT runid, name, officetel, position, officename FROM klnumber ";
   drawerOptions: any;
 
 
@@ -39,6 +41,23 @@ export class HomePage {
     };
   }
 
+  ionViewWillEnter(){
+    this.showData();
+  }
+
+  private showData(){
+    this.sqlite.create(this.optionslo).then((db: SQLiteObject) => {
+      db.executeSql(this.queryNames, {}).then((data) => {
+        this.contacts = [];
+        let rows = data.rows;
+        for (let i = 0; i < rows.length; i++)
+          this.contacts.push({id: rows.item(i).runid, fullname: rows.item(i).name,
+                        phone: rows.item(i).officetel, position: rows.item(i).position,
+                        officename: rows.item(i).officename })
+      })
+    });
+  }
+
   goToAmper(params){
     if (!params) params = {};
     this.navCtrl.push(AmperPage);
@@ -51,8 +70,11 @@ export class HomePage {
   }
 
   private goSearch(){
-    // let val = ev.target.value;
     this.navCtrl.push(SearchPage);
+  }
+
+  private call(contact){
+    window.open('tel:'+contact.phone);
   }
 
 }

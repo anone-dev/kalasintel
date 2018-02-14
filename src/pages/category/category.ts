@@ -48,6 +48,10 @@ export class CategoryPage {
     this.showData();
   }
 
+  ionViewDidLoad() {
+    // this.showData();
+  }
+
   
   
 }

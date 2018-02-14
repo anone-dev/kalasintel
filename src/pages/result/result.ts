@@ -33,6 +33,9 @@ export class ResultPage {
     this.showData();
   }
 
+  ionViewDidLoad() {
+    // this.showData();
+  }
 
   private showData(){
     this.sqlite.create(this.options).then((db: SQLiteObject) => {
@@ -45,15 +48,12 @@ export class ResultPage {
                         officename: rows.item(i).officename })
       })
     });
-
     // let toast = this.toastCtrl.create({
     //   message: 'ค่า amper: '+this.amper + ': ' + this.category,
     //   duration: 3000
     // });
     // toast.present();
-  }
-
-  
+  }  
 
   private call(contact){
     // alert(contact.name+" "+contact.phone);

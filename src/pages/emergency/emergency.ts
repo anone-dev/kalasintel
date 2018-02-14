@@ -10,7 +10,7 @@ export class EmergencyPage {
   public contacts: Array<object>;
   // private options = { name: "KLNumber.db", location: 'default', createFromLocation: 1 };
   private optionsLo = { name: "KLNumber.db", location: 'default' };
-  private queryNames = "SELECT * FROM klnumber WHERE category ='เบอร์โทรศัพท์ฉุกเฉิน'";
+  private queryNames = "SELECT runid, name, officetel FROM klnumber WHERE category ='เบอร์โทรศัพท์ฉุกเฉิน'";
 
   constructor(public navCtrl: NavController, private sqlite: SQLite) {
     // this.sqlite.create(this.options).then((db: SQLiteObject) => {
@@ -37,6 +37,10 @@ export class EmergencyPage {
 
   ionViewWillEnter(){
     this.showData();
+  }
+
+  ionViewDidLoad() {
+    // this.showData();
   }
 
   private showData(){

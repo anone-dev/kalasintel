@@ -47,5 +47,9 @@ export class AmperPage {
   ionViewWillEnter(){
     this.showData();
   }
+
+  ionViewDidLoad() {
+    // this.showData();
+  }
   
 }

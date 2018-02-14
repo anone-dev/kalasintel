@@ -20,8 +20,8 @@
 
     <ion-list >
       <ion-item *ngFor="let contact of contacts" (click)="call(contact)" color="positive" id="emergency-list-item12">
-        <h3>{{ contact.fullname }}</h3>
-        <p>{{ contact.phone }}</p>
+        <h2>{{ contact.fullname }}</h2>
+        <h3>{{ contact.phone }}</h3>
         <ion-note item-right>โทรออก</ion-note>
         <ion-icon name="call" item-right></ion-icon>
       </ion-item>
